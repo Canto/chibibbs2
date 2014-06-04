@@ -62,13 +62,13 @@ if(empty($_GET['page'])) $_GET['page'] = 1;
 /* Set board paging */
 switch($search){
 	case "name" :
-		$sql = "SELECT count(`chibi_pic`.`idx`) FROM  `chibi_pic` LEFT JOIN  `chibi_comment` ON  `chibi_pic`.`no` =  `chibi_comment`.`pic_no` WHERE  `chibi_comment`.`name`LIKE'".mysql_real_escape_string($keyword)."' AND  `chibi_comment`.`cid`='".mysql_real_escape_string($cid)."' GROUP BY `chibi_pic`.`no` ORDER BY  `chibi_pic`.`no` DESC ";
+		$sql = "SELECT count(`chibi_pic`.`idx`) FROM  `chibi_pic` LEFT JOIN  `chibi_comment` ON  `chibi_pic`.`no` =  `chibi_comment`.`pic_no` WHERE  `chibi_comment`.`name`LIKE'".mysql_real_escape_string($keyword)."' AND  `chibi_comment`.`cid`='".mysql_real_escape_string($_GET['cid'])."' GROUP BY `chibi_pic`.`no` ORDER BY  `chibi_pic`.`no` DESC ";
 		break;
 	case "comment" :
-		$sql = "SELECT count(`chibi_pic`.`idx`) FROM  `chibi_pic` LEFT JOIN  `chibi_comment` ON  `chibi_pic`.`no` =  `chibi_comment`.`pic_no` WHERE  `chibi_comment`.`comment` LIKE '%".mysql_real_escape_string($keyword)."%' AND  `chibi_comment`.`cid` =  '".mysql_real_escape_string($cid)."' GROUP BY `chibi_pic`.`no` ORDER BY  `chibi_pic`.`no` DESC";
+		$sql = "SELECT count(`chibi_pic`.`idx`) FROM  `chibi_pic` LEFT JOIN  `chibi_comment` ON  `chibi_pic`.`no` =  `chibi_comment`.`pic_no` WHERE  `chibi_comment`.`comment` LIKE '%".mysql_real_escape_string($keyword)."%' AND  `chibi_comment`.`cid` =  '".mysql_real_escape_string($_GET['cid'])."' GROUP BY `chibi_pic`.`no` ORDER BY  `chibi_pic`.`no` DESC";
 		break;
 	case "memo" :
-		$sql = "SELECT count(`chibi_pic`.`idx`) FROM  `chibi_pic` LEFT JOIN  `chibi_comment` ON  `chibi_pic`.`no` =  `chibi_comment`.`pic_no` WHERE  `chibi_comment`.`memo` LIKE '%".mysql_real_escape_string($keyword)."%' AND  `chibi_comment`.`cid` =  '".mysql_real_escape_string($cid)."' GROUP BY `chibi_pic`.`no` ORDER BY  `chibi_pic`.`no` DESC";
+		$sql = "SELECT count(`chibi_pic`.`idx`) FROM  `chibi_pic` LEFT JOIN  `chibi_comment` ON  `chibi_pic`.`no` =  `chibi_comment`.`pic_no` WHERE  `chibi_comment`.`memo` LIKE '%".mysql_real_escape_string($keyword)."%' AND  `chibi_comment`.`cid` =  '".mysql_real_escape_string($_GET['cid'])."' GROUP BY `chibi_pic`.`no` ORDER BY  `chibi_pic`.`no` DESC";
 		break;
 	case "no" :
 		$sql = "SELECT count(no) FROM `chibi_pic` WHERE cid='".mysql_real_escape_string($_GET['cid'])."' AND no='".mysql_real_escape_string($keyword)."'";
