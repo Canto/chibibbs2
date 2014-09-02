@@ -34,6 +34,7 @@ class Board{
 		$query = mysql_query($sql,$this->conn);
 		$this->skin = (object) mysql_fetch_assoc($query);
 		$this->skin_set();
+		return $this->gets_skin();
 	}
 	function board_set(){
 		$this->spam = (object) unserialize($this->board->spam);
@@ -41,7 +42,6 @@ class Board{
 		$this->op = (object) unserialize($this->board->op);
 	}
 	function skin_set(){
-		$this->skin = (object) mysql_fetch_array($this->skin);
 		$this->skin->op = (object) unserialize($this->skin->op);
 	}
 	function get($key){
@@ -115,6 +115,38 @@ class Board{
 				return $query;
 			}
 		}
+	}
+	function check($cid,$userinfo)
+	{
+		if($userinfo->is_admin == "Y")
+		{
+			return true;
+		}
+		else if($cid)
+		{
+			$sql = "SELECT * FROM `chibi_admin` where `cid`='".mysql_real_escape_string($cid)."'";
+			$query = mysql_query($sql,$this->conn);
+			$admin = (object) mysql_fetch_assoc($query);
+			$admin->permmission = explode(",",$admin->permission);
+			if($admin->permission[0])
+			{
+				for($i=0;$i<count($admin->permission);$i++)
+				{
+					if($admin->permisssion[$i]==$userinfo->userid)
+					{
+						return true;
+					}
+				}
+			}else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+
 	}
 }
 ?>
