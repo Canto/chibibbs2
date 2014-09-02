@@ -1,8 +1,7 @@
 <?php
 if(!defined("__CHIBI__")) exit();
-//include_once "../data/config/db.config.php";
 
-class Install{
+class Install {
 
 	private $hostname;
 	private $username;
@@ -39,8 +38,9 @@ class Install{
 		if(is_resource(@mysql_query("DESC chibi_log",$chibi_conn))) $DB_check->log = true;
 
 		if(($DB_check->status && $DB_check->admin && $DB_check->skin && $DB_check->pic && $DB_check->comment /*&& $DB_check->member && $DB_check->emoticon && $DB_check->log*/)!=true){
-			echo "<script type=\"text/javascript\">location.href=\"install.setup.php\";</script>";
-			exit;
+			return false;
+		}else{
+			return true;
 		}
 	}
 
