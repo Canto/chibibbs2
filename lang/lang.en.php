@@ -1,7 +1,55 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: canto87
- * Date: 2014/02/19
- * Time: 13:43
- */ 
+$clang = new stdClass();
+$clang->cid_empty = "Please insert board id. index.php?cid=board ID";
+$clang->board_empty = "This board id is non-existent.";
+$clang->installed = "Already installed.";
+$clang->is_not_login = "Login is required.";
+$clang->is_not_admin = "Available only to the administrator.";
+$clang->login = "Login";
+$clang->fail_login = "Login failed. <br/> Please check your ID/PASSWORD.";
+$clang->admin_type_super = "Super Administrator";
+$clang->admin_type_xeboard = "XE Member";
+$clang->admin_type_board = "Board Manager";
+$clang->board_create = "Create";
+$clang->board_management = "Management";
+$clang->admin_page = "Admin page";
+$clang->chibi_notice = "Chibi Tool BBS Notice";
+$clang->all_visitor = "Total visitors";
+$clang->today_visitor = "Today visitors";
+$clang->all_picture = "Total Pictures";
+$clang->all_comment = "Total Comments";
+$clang->pictures = "Pictures";
+$clang->comments = "Comments";
+$clang->number_picture = "Number of Pictures";
+$clang->number_comment = "Number of Comments";
+$clang->admin_list_cid = "Board ID";
+$clang->admin_list_skin = "Skin";
+$clang->logout = "Logout";
+$clang->list_board_management = "Board Setup";
+$clang->skin_management = "Skin Setup";
+$clang->emoticon = "Emoticon Setup";
+$clang->statics = "Statics";
+$clang->reset = "Reset";
+$clang->del = "Delete";
+$clang->create_board = "Create Board";
+$clang->board_id = "Board ID";
+$clang->help_board_id = "<span class=\"text-danger\">Board ID is allows only alphabets, numbers. The first letter should be an alaphabet.</span>";
+$clang->board_id_available = "Board ID is available.";
+$clang->board_id_unavailable = "Board ID is unavailable.";
+$clang->set_skin = "Select Skin";
+$clang->help_set_skin = "Please select the skin.";
+$clang->board_titile = "Board Title";
+$clang->help_board_title = "Please insert board title to be displayed in a browser title.";
+$clang->board_secret = "Secret Board";
+$clang->help_board_secret = "If you select Yes, the board will be secret.";
+$clang->board_secret_select_yes = "Yes";
+$clang->board_secret_select_no = "No";
+$clang->board_secret_password = "Secret Board Password";
+$clang->help_board_secret_password = "Please insert password for access to the Secret Board.";
+$clang->use_permission = "Board use permission";
+$clang->member_b_passrod = "Board Member Password";
+$clang->help_member_b_password = "Please insert password to use Board";
+$clang->pic_page = "Picture per page";
+$clang->help_pic_page = "The number of pictures to show per page.";
+$clang->pic_page_bar = "";
+$clang->help_pic_page_bar = "";
