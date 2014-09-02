@@ -140,11 +140,11 @@ class Paging{
 		$this->display_confirm = true;
 
 		if($this->display_mode && ($this->page != 1)){
-			$this->html =  "<li><span><a href=\"http://{$this->url}page=1\">{$this->start_btn}</a></span></li>";
+			$this->html =  "<li><a href=\"http://{$this->url}page=1\">{$this->start_btn}</a></li>";
 		}
 		if($this->is_prev){
 			$go_prev = $this->start_page - 1;
-			$this->html .=  "<li><span><a href=\"http://{$this->url}page=$go_prev\">{$this->prev_btn}</a></span></li>";
+			$this->html .=  "<li><a href=\"http://{$this->url}page=$go_prev\">{$this->prev_btn}</a></li>";
 		}
 
 		for($i = $this->start_page; $i <= $this->end_page; $i++){

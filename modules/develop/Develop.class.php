@@ -1,7 +1,7 @@
 <?php
 class Develop
 {
-	public function debugPrint($data)
+	static function debugPrint($data)
 	{
 		if(is_array($data) || is_object($data))
 		{
